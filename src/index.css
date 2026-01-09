@@ -1,0 +1,549 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-canopy-horizontal: canopy-x var(--duration) infinite linear;
+  --animate-canopy-vertical: canopy-y var(--duration) linear infinite;
+
+  @keyframes canopy-x {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap))); }
+  }
+  @keyframes canopy-y {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-100% - var(--gap))); }
+  }
+}
+
+/* Explicit Animation Classes as Fallback */
+.animate-canopy-horizontal {
+  animation: canopy-x var(--duration) linear infinite;
+}
+
+.animate-canopy-vertical {
+  animation: canopy-y var(--duration) linear infinite;
+}
+
+/* NET FIBER PERÚ - Premium Brand Theme */
+
+/* Brand Colors - Based on NET FIBER PERÚ Logo */
+:root {
+  /* Primary Blue (from logo - dark navy tones) */
+  --nf-blue: #1e3a5f;
+  --nf-blue-light: #2a4a7a;
+  --nf-blue-dark: #0f172a;
+  --nf-blue-darker: #080d14;
+  
+  /* Golden Accent (from logo) */
+  --nf-gold: #D4AF37;
+  --nf-gold-light: #e6c75a;
+  --nf-gold-dark: #B8860B;
+  
+  /* Accent Colors - Derived from logo blues */
+  --nf-accent: #4a90c2;
+  --nf-accent-light: #6ba8d6;
+  --nf-accent-dark: #2a6a9f;
+  
+  /* Neutral Colors */
+  --nf-white: #FFFFFF;
+  --nf-gray-50: #f8fafc;
+  --nf-gray-100: #f1f5f9;
+  --nf-gray-200: #e2e8f0;
+  --nf-gray-300: #cbd5e1;
+  --nf-gray-400: #94a3b8;
+  --nf-gray-500: #64748b;
+  --nf-gray-600: #475569;
+  --nf-gray-700: #334155;
+  --nf-gray-800: #1e293b;
+  --nf-dark: #0a0f1a;
+  --nf-dark-blue: #0f172a;
+}
+
+/* ============================================
+   DARK MODE (Default)
+   ============================================ */
+[data-theme="dark"], .dark-mode {
+  --bg-primary: #0a0f1a;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --bg-card: rgba(15, 23, 42, 0.8);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(212, 175, 55, 0.5);
+  
+  --accent-primary: #D4AF37;
+  --accent-secondary: #4a90c2;
+  --accent-glow: rgba(212, 175, 55, 0.4);
+}
+
+/* ============================================
+   LIGHT MODE
+   ============================================ */
+[data-theme="light"], .light-mode {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --text-muted: #64748b;
+  
+  --border-color: rgba(15, 23, 42, 0.1);
+  --border-hover: rgba(212, 175, 55, 0.6);
+  
+  --accent-primary: #B8860B;
+  --accent-secondary: #1e3a5f;
+  --accent-glow: rgba(184, 134, 11, 0.3);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--nf-dark);
+}
+
+/* ============================================
+   SECTION GRADIENTS - Dark Theme Backgrounds
+   ============================================ */
+
+/* Hero Section - Dark blue gradient */
+.section-hero {
+  background: linear-gradient(180deg, 
+    var(--nf-blue-dark) 0%, 
+    var(--nf-blue) 50%,
+    var(--nf-blue-light) 100%);
+}
+
+/* Plans Section - Dark gradient */
+.section-plans {
+  background: linear-gradient(180deg,
+    var(--nf-blue-light) 0%,
+    var(--nf-blue) 50%,
+    var(--nf-blue-dark) 100%);
+}
+
+/* Features Section - Dark Blue */
+.section-features {
+  background: linear-gradient(180deg,
+    var(--nf-blue-dark) 0%,
+    var(--nf-blue) 100%);
+}
+
+/* Speed Section - Blue gradient */
+.section-speed {
+  background: linear-gradient(180deg,
+    var(--nf-blue) 0%,
+    var(--nf-blue-dark) 100%);
+}
+
+/* Coverage Section - Dark with Blue accent */
+.section-coverage {
+  background: linear-gradient(180deg,
+    var(--nf-dark) 0%,
+    #0a1628 50%,
+    var(--nf-dark-blue) 100%);
+}
+
+/* Testimonials Section - Blue to Dark */
+.section-testimonials {
+  background: linear-gradient(180deg,
+    var(--nf-blue) 0%,
+    var(--nf-dark) 100%);
+}
+
+/* FAQ Section - Dark Blue gradient */
+.section-faq {
+  background: linear-gradient(180deg,
+    var(--nf-dark-blue) 0%,
+    var(--nf-dark) 100%);
+}
+
+/* Contact Section - Blue gradient */
+.section-contact {
+  background: linear-gradient(180deg,
+    var(--nf-blue-dark) 0%,
+    var(--nf-blue) 50%,
+    var(--nf-blue-light) 100%);
+}
+
+/* Why Choose Us Section - Dark Blue */
+.section-why {
+  background: linear-gradient(180deg,
+    var(--nf-blue) 0%,
+    var(--nf-blue-dark) 100%);
+}
+
+/* Savings Calculator Section - Blue Dark */
+.section-savings {
+  background: linear-gradient(180deg,
+    var(--nf-blue) 0%,
+    var(--nf-dark) 100%);
+}
+
+/* ============================================
+   LIGHT MODE - Section Gradients Override
+   ============================================ */
+[data-theme="light"] .section-hero,
+.light-mode .section-hero {
+  background: linear-gradient(180deg, 
+    var(--nf-gray-50) 0%, 
+    var(--nf-gray-100) 50%,
+    var(--nf-gray-200) 100%);
+}
+
+[data-theme="light"] .section-plans,
+.light-mode .section-plans {
+  background: linear-gradient(180deg,
+    var(--nf-gray-100) 0%,
+    var(--nf-gray-50) 50%,
+    var(--nf-gray-100) 100%);
+}
+
+[data-theme="light"] .section-features,
+.light-mode .section-features {
+  background: linear-gradient(180deg,
+    var(--nf-gray-50) 0%,
+    var(--nf-gray-100) 100%);
+}
+
+[data-theme="light"] .section-speed,
+.light-mode .section-speed {
+  background: linear-gradient(180deg,
+    var(--nf-gray-100) 0%,
+    var(--nf-gray-50) 100%);
+}
+
+[data-theme="light"] .section-coverage,
+.light-mode .section-coverage {
+  background: linear-gradient(180deg,
+    var(--nf-gray-50) 0%,
+    var(--nf-gray-100) 50%,
+    var(--nf-gray-200) 100%);
+}
+
+[data-theme="light"] .section-testimonials,
+.light-mode .section-testimonials {
+  background: linear-gradient(180deg,
+    var(--nf-gray-100) 0%,
+    var(--nf-gray-50) 100%);
+}
+
+[data-theme="light"] .section-faq,
+.light-mode .section-faq {
+  background: linear-gradient(180deg,
+    var(--nf-gray-50) 0%,
+    var(--nf-gray-100) 100%);
+}
+
+[data-theme="light"] .section-contact,
+.light-mode .section-contact {
+  background: var(--nf-gray-50);
+}
+
+[data-theme="light"] .section-why,
+.light-mode .section-why {
+  background: linear-gradient(180deg,
+    var(--nf-gray-100) 0%,
+    var(--nf-gray-50) 100%);
+}
+
+[data-theme="light"] .section-savings,
+.light-mode .section-savings {
+  background: var(--nf-gray-50);
+}
+::selection {
+  background-color: rgba(212, 175, 55, 0.3);
+  color: var(--nf-gold);
+}
+
+/* Dark scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nf-gold);
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.7);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-slide-in-from-top {
+  animation: slide-in-from-top 0.3s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Gradient Text - Gold accent */
+.gradient-text {
+  background: linear-gradient(135deg, var(--nf-gold), var(--nf-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient Button - Gold accent */
+.btn-gradient {
+  background: linear-gradient(135deg, var(--nf-gold-dark), var(--nf-gold));
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Card Glow Effect */
+.card-glow {
+  transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Glass Effect - Dark Mode */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glass Effect - Light Mode */
+[data-theme="light"] .glass,
+.light-mode .glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme-aware text colors */
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.text-theme-muted {
+  color: var(--text-muted);
+}
+
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+
+/* Background Blobs */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* FAQ Accordion Animation */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+}
+
+/* Custom Cursor with Glow - Gold */
+body {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='8' fill='%23D4AF37' opacity='0.3'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23D4AF37'/%3E%3C/svg%3E") 12 12, auto;
+}
+
+a, button {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='%23D4AF37' opacity='0.4'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23D4AF37'/%3E%3C/svg%3E") 16 16, pointer;
+}
+
+/* 3D Hover Effect for Cards */
+.card-3d {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 
+    0 25px 50px -12px rgba(212, 175, 55, 0.25),
+    0 0 50px rgba(212, 175, 55, 0.2);
+}
+
+/* Subtle 3D Tilt */
+.card-tilt {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-tilt:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 20px 40px -15px rgba(212, 175, 55, 0.3),
+    0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+/* Confetti Success Animation */
+@keyframes confetti-pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.confetti-success {
+  animation: confetti-pop 0.5s ease-out forwards;
+}
+
+/* Calculator Card Styling */
+.calculator-card {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(184, 134, 11, 0.05));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Input Focus Glow */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  border-color: rgba(212, 175, 55, 0.6) !important;
+}
+
+/* Range Slider Styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--nf-gold-dark), var(--nf-gold));
+  border-radius: 50%;
+  margin-top: -8px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--nf-gold-dark), var(--nf-gold));
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}

@@ -1,0 +1,48 @@
+{
+  "name": "evelynsac-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "lucide-react": "^0.562.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "~5.3.3",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@react-three/drei": "^9.105.0",
+    "@react-three/fiber": "^8.16.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
+    "@types/leaflet": "^1.9.21",
+    "@types/three": "^0.160.0",
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.0.0",
+    "gsap": "^3.14.2",
+    "leaflet": "^1.9.4",
+    "lottie-react": "^2.4.1",
+    "mathjs": "^12.0.0",
+    "motion": "^10.17.0",
+    "react": "^18.3.1",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18.3.1",
+    "react-intersection-observer": "^9.8.1",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.28.0",
+    "react-type-animation": "^3.2.0",
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.160.0"
+  }
+}

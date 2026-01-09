@@ -1,0 +1,22 @@
+{
+  "name": "EVELYN SAC - Internet Fibra Óptica",
+  "short_name": "EVELYN SAC",
+  "description": "Internet de alta velocidad hasta 300 Mbps con Fibra Óptica. Cable TV HD y Telefonía.",
+  "theme_color": "#0a0f1a",
+  "background_color": "#0a0f1a",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/vite.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
